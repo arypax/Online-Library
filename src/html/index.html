@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Website</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to the Library</h2>
+            <p>Explore thousands of books in different genres.</p>
+            <button class="cta" onclick="window.location.href='catalog.html'">Start Exploring</button>
+        </section>
+        <section class="about-library">
+            <h3>About the Library</h3>
+            <p>
+                Welcome to our library! Established to inspire a love for reading and learning, our library is a sanctuary for book lovers, researchers, and students. With a wide range of genres and collections, we aim to serve every visitor with access to knowledge and entertainment.
+            </p>
+            <p>
+                Our mission is to provide a space where ideas flourish, creativity is ignited, and a community of curious minds is nurtured. Whether you're here to borrow books, attend events, or explore new topics, we are always happy to welcome you.
+            </p>
+        </section>
+        <section class="project-info">
+            <h3>About This Project</h3>
+            <p>
+                This website is a coursework project for the "Web Technologies" discipline by second-year students of the International Information Technology University (IITU), Vladislav Pineker and Yerassyl Sagindykov.
+            </p>
+            <p>
+                The purpose of this project is to showcase the knowledge and skills acquired during the course. The website includes features such as a book catalog, a search functionality, and a user-friendly personal account for managing borrowed books.
+            </p>
+            <p>
+                We hope this platform demonstrates a practical approach to building modern web applications and serves as a foundation for future improvements and features.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-form">
+                <h3>Contact Us</h3>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="18962192-e71d-4229-9316-157240529053">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="footer-map">
+                <h3>Find Us</h3>
+                <iframe src="https://yandex.kz/map-widget/v1/?ll=76.910024%2C43.234733&mode=poi&poi%5Bpoint%5D=76.909906%2C43.235095&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1016114729&z=18.27" width="100%" height="300" frameborder="1" allowfullscreen="true" style="border-radius: 10px;"></iframe>
+            </div>
+        </div>
+        <p>&copy; 2024 Vladislav Pineker and Yerassyl Sagindykov - Library Website. All Rights Reserved.</p>
+    </footer>
+    <div id="notification" class="hidden">Message Sent Successfully!</div>
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const notification = document.getElementById('notification');
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(contactForm);
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                });
+                if (response.ok) {
+                    notification.textContent = 'Message Sent Successfully!';
+                    notification.classList.add('visible');
+                } else {
+                    notification.textContent = 'Failed to send the message. Try again!';
+                    notification.classList.add('visible');
+                }
+            } catch (error) {
+                notification.textContent = 'Error occurred. Please try again later.';
+                notification.classList.add('visible');
+            }
+            setTimeout(() => notification.classList.remove('visible'), 3000);
+        });
+    </script>
+</body>
+</html>
