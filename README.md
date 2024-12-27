@@ -23,7 +23,6 @@ The purpose of this project is to showcase the knowledge and skills acquired dur
 
 ## Project Structure
 ![image](https://github.com/user-attachments/assets/ad6652ac-6aea-4ab9-a072-6e0db1170cbb)
-![image](https://github.com/user-attachments/assets/c3ebd924-1eff-4da8-8377-7b30342ae58b)
 ![image](https://github.com/user-attachments/assets/3d1c8dc7-ccd1-417f-b187-bd7203937de7)
 ![image](https://github.com/user-attachments/assets/fc0d6aac-2bc9-4591-95b0-3fce722b0880)
 ![image](https://github.com/user-attachments/assets/cf6db6ec-d13a-4754-bbd4-c5cc82f83654)
